@@ -1,0 +1,33 @@
+# Ultralytics YOLO 🚀, AGPL-3.0 license
+# COCO128 dataset https://www.kaggle.com/ultralytics/coco128 (first 128 images from COCO train2017) by Ultralytics
+# Documentation: https://docs.ultralytics.com/datasets/detect/coco/
+# Example usage: yolo train data=coco128.yaml
+# parent
+# ├── ultralytics
+# └── datasets
+#     └── coco128  ← downloads here (7 MB)
+
+# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
+path: D:\project_SJ\ultralytics-main\datasets\dataset-v10-four # dataset root dir
+train:
+  - images/train # train images (relative to 'path') 128 images
+val:
+  - images/val # val images (relative to 'path') 128 images
+test:
+  - images/test # test images (optional)
+nc: 4
+# Classes
+names:
+  0: U-type
+  1: inverted-U
+  2: chain
+  3: special
+#  4: long-long
+#  5: ellipsoidal
+
+
+##class_weights: [1.0, 1.0, 1.0, 1.0]  # 默认情况下所有类别的权重相同
+#class_weights: [1.0, 0.6, 0.22, 4.2]  # 逆频率权重
+##class_weights: [1.9, 1.14, 0.43, 8.0]  # 平滑逆频率
+##class_weights: [1.49, 1.16, 0.67, 3.1]  # 平方根逆频率
+##class_weights: [1.82, 1.10, 0.42, 7.8] # 有效样本数权重
